@@ -32,7 +32,7 @@ int main(int argc, char** argv){
 		if(argc>=3)
 			return stack_problem(argv[2]);
 		else {
-			char * emtstr = []
+			char * emtstr = [];
 			return stack_problem(emtstr);
 		}
 	} else if (string(argv[1]).compare("heap")==0){
