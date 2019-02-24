@@ -15,6 +15,9 @@ run: $(P)
 clear_run: $(P)
 	clear; clear; make run
 	
+debug: $(P)
+	gdb ./$(P)
+	
 clean:
 	rm -rf $(P)
 	rm -rf $(P).o
