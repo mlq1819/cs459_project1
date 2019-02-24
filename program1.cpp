@@ -17,7 +17,7 @@ void secret(void){
 
 int stack_problem(char* arg){
 	char buffer[BUFSIZE];
-	strcpy(buffer, argv[1]);
+	strcpy(buffer, arg);
 	
 	return 0;
 }
