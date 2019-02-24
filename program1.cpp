@@ -5,6 +5,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <iostream>
+#include <string>
 #define BUFSIZE 256
 
 using namespace std;
