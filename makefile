@@ -1,4 +1,6 @@
 P=program1
+S=prgm1_stack_exploit
+H=prgm1_heap_exploit
 CFLAGS= -g -Wall
 
 all: $(P)
