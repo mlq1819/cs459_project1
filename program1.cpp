@@ -25,7 +25,7 @@ int main(int argc, char** argv){
 	char * arg[BUFSIZE];
 	for(int i=0; i<BUFSIZE; i++)
 		arg[i]='\0';
-	cout << "Input \"password\" or \'AUTO\' for automatically generated input:" << cout
+	cout << "Input \"password\" or \'AUTO\' for automatically generated input:" << endl;
 	cin >> arg;
 	bool autogen = false;
 	if(strcmp(arg, "AUTO")==0){
