@@ -1,6 +1,7 @@
 #ifndef DEBUG
 #define DEBUG true
 #endif
+#include <iostream>
 #include "program1.h"
 #define BUFSIZE 256
 
@@ -8,7 +9,7 @@ using namespace std;
 
 void secret(void){
 	cout << "SECRET TUNNEL" << endl;
-	//exit(0);
+	exit(0);
 }
 
 int stack_problem(char* arg){
@@ -33,7 +34,7 @@ for(int i=0; i<argc; i++){
 	cout << argv[i];
 }
 cout << "]" << endl;
-#endif	
+#endif
 	if(string(argv[1]).compare("stack")==0){
 		if(argc>=3)
 			return stack_problem(argv[2]);
