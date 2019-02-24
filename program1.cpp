@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <iostream>
 #include <string>
+#include "program1.h"
 #define BUFSIZE 256
 
 using namespace std;
@@ -28,7 +29,7 @@ int heap_problem(){
 	return 0;
 }
 
-int main(int argc, char** argv){
+int prog_main(int argc, char** argv){
 #if DEBUG
 cout << "In program1:\n[";
 for(int i=0; i<argc; i++){
