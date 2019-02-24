@@ -9,6 +9,12 @@ $(P): $(P).o
 $(P).o: $(P).cpp
 	g++ $(CFLAGS) -c $(P).cpp -o $(P).o
 	
+run: $(P)
+	./$(P)
+	
+clear_run: $(P)
+	clear; clear; make run
+	
 clean:
 	rm -rf $(P)
 	rm -rf $(P).o
