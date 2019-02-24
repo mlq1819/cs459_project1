@@ -31,8 +31,10 @@ int main(int argc, char** argv){
 	if(string(argv[1]).compare("stack")==0){
 		if(argc>=3)
 			return stack_problem(argv[2]);
-		else
-			return stack_problem("");
+		else {
+			char * emtstr = []
+			return stack_problem(emtstr);
+		}
 	} else if (string(argv[1]).compare("heap")==0){
 		return heap_problem();
 	}
