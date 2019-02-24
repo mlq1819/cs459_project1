@@ -2,7 +2,6 @@
 #define DEBUG true
 #endif
 #include "program1.h"
-#define BUFSIZE 256
 
 using namespace std;
 

@@ -15,7 +15,7 @@ $(S).o: $(S).cpp $(P).h
 	g++ $(CFLAGS) -c $(S).cpp -o $(S).o
 	
 run_stack: $(S)
-	./$(S) stack test
+	./$(S) stack
 	
 clean:
 	rm -rf $(S)
