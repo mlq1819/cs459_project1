@@ -3,7 +3,7 @@ S=prgm1_stack_exploit
 H=prgm1_heap_exploit
 CFLAGS= -g -Wall
 
-all: $(P) $(S) 
+all: $(S)
 
 $(S): $(S).o $(P).o
 	g++ $(CFLAGS) $(S).o $(P).o -o $(S)
@@ -14,7 +14,7 @@ $(P).o: $(P).cpp $(P).h
 $(S).o: $(S).cpp $(P).h
 	g++ $(CFLAGS) -c $(S).cpp -o $(S).o
 	
-run_stack: $(P) $(S)
+run_stack: $(S)
 	./$(S) stack test
 	
 clean:
