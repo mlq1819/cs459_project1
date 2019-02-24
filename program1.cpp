@@ -18,8 +18,8 @@ void secret(void){
 int stack_problem(char* arg){
 	cout << "In stack_problem: arg=" << arg << endl;
 	char buffer[BUFSIZE];
-	
 	strcpy(buffer, arg);
+	
 	return 0;
 }
 
