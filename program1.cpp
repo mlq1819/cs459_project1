@@ -27,12 +27,12 @@ int heap_problem(){
 }
 
 int main(int argc, char** argv){
-	if("stack".equals(argv[1])){
+	if("stack".compare(argv[1])==0){
 		if(argc>=3)
 			return stack_problem(argv[2]);
 		else
 			return stack_problem("");
-	} else if ("heap".equals(argv[1])){
+	} else if ("heap".compare(argv[1])==0){
 		return heap_problem();
 	}
 	return 0;
