@@ -3,11 +3,14 @@ S=prgm1_stack_exploit
 H=prgm1_heap_exploit
 CFLAGS= -g -Wall
 
-all: $(P)
+all: $(P) $(S) 
 
 $(P): $(P).o
 	g++ $(CFLAGS) $(P).o -o $(P)
 
+$(S): $(S).o
+	g++ $(CFLAGS) $(S).o -o $(S)
+	
 $(P).o: $(P).cpp
 	g++ $(CFLAGS) -c $(P).cpp -o $(P).o
 
