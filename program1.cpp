@@ -8,7 +8,7 @@ using namespace std;
 
 void secret(void){
 	cout << "SECRET TUNNEL" << endl;
-	exit(0);
+	//exit(0);
 }
 
 int stack_problem(char* arg){
