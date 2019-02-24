@@ -6,7 +6,7 @@ CFLAGS= -g -Wall
 all: $(P) $(S) 
 
 $(S): $(S).o $(P).o
-	g++ $(CFLAGS) $(S).o -o $(S)
+	g++ $(CFLAGS) $(S).o $(P).o -o $(S)
 	
 $(P).o: $(P).cpp $(P).h
 	g++ $(CFLAGS) -c $(P).cpp -o $(P).o

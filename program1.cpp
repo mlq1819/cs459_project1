@@ -1,7 +1,6 @@
 #ifndef DEBUG
 #define DEBUG true
 #endif
-#include <iostream>
 #include "program1.h"
 #define BUFSIZE 256
 
