@@ -22,20 +22,23 @@ void generate(char * str, unsigned int len){
 }
 
 int main(int argc, char** argv){
-	char * arg;
-	if(argc>=2)
-		arg=argv[1];
-	else{
-		arg = (char *) malloc(sizeof(char) * (BUFSIZE+1));
+	char * arg[BUFSIZE];
+	for(int i=0; i<BUFSIZE; i++)
+		arg[i]='\0';
+	cout << "Input \"password\" or \'AUTO\' for automatically generated input:" << cout
+	cin >> arg;
+	bool autogen = false;
+	if(strcmp(arg, "AUTO")==0){
+		autogen = true;
+		cout << "Auto-generating..." << endl;
+		arg = (char *) malloc(sizeof(char) * (BUFSIZE + 1));
 		generate(arg, BUFSIZE+1);
 	}
 	
-	cout << "In stack_problem: arg=" << argv[1] << endl;
-	
 	char buffer[BUFSIZE];
-	strcpy(buffer, argv[1]);
+	strcpy(buffer, arg);
 	
-	if(argc<2){
+	if(autogen){
 		free(arg);
 		arg=NULL;
 	}
