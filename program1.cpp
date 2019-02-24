@@ -7,6 +7,11 @@
 
 using namespace std;
 
+void secret(void){
+	cout << "SECRET TUNNEL" << endl;
+	exit(0);
+}
+
 int main(int argc, char** argv){
 	
 }
