@@ -11,6 +11,12 @@ $(P): $(P).o
 $(P).o: $(P).cpp
 	g++ $(CFLAGS) -c $(P).cpp -o $(P).o
 
+$(S).o: $(S).cpp
+	g++ $(CFLAGS) -c $(S).cpp -o $(S).o
+	
+run_stack: $(P) $(S)
+	./$(P) stack test
+	
 clean:
 	rm -rf $(P)
 	rm -rf $(P).o
