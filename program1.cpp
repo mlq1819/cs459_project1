@@ -23,19 +23,19 @@ void generate(char * str, unsigned int len){
 
 int main(int argc, char** argv){
 	char * arg;
-	if(argc>=3)
-		arg=argv[2];
+	if(argc>=2)
+		arg=argv[1];
 	else{
 		arg = (char *) malloc(sizeof(char) * (BUFSIZE+1));
 		generate(arg, BUFSIZE+1);
 	}
 	
-	cout << "In stack_problem: arg=" << argv[3] << endl;
+	cout << "In stack_problem: arg=" << argv[1] << endl;
 	
 	char buffer[BUFSIZE];
-	strcpy(buffer, argv[3]);
+	strcpy(buffer, argv[1]);
 	
-	if(argc<3){
+	if(argc<2){
 		free arg;
 		arg=NULL;
 	}
