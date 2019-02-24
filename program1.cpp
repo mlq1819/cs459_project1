@@ -28,12 +28,12 @@ int heap_problem(){
 }
 
 int main(int argc, char** argv){
-	if(compare("stack", argv[1])==0){
+	if(argv[1].compare("stack")==0){
 		if(argc>=3)
 			return stack_problem(argv[2]);
 		else
 			return stack_problem("");
-	} else if (compare("heap", argv[1])==0){
+	} else if (argv[1].compare("heap")==0){
 		return heap_problem();
 	}
 	return 0;
