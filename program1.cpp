@@ -36,7 +36,7 @@ int main(int argc, char** argv){
 	strcpy(buffer, argv[1]);
 	
 	if(argc<2){
-		free arg;
+		free(arg);
 		arg=NULL;
 	}
 	return 0;
