@@ -1,4 +1,4 @@
-#if ndef DEBUG
+#ifndef DEBUG
 #define DEBUG false
 #endif
 #include <stdio.h>
