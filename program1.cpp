@@ -22,7 +22,7 @@ int main(int argc, char** argv){
 	getline(cin, arg);
 	if(arg.compare("AUTO")==0){
 		cout << "Auto-generating..." << endl;
-		args.assign(BUFSIZE+1, 's');
+		arg.assign(BUFSIZE+1, 's');
 	}
 	
 	char buffer[BUFSIZE];
