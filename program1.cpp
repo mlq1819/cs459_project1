@@ -18,7 +18,7 @@ void secret(void){
 
 int main(int argc, char** argv){
 #if DEBUG
-cout << "Buffer Size = BUFSIZE" << endl;
+cout << "BUFSIZE: " << BUFSIZE << endl;
 #endif
 	string arg;
 	cout << "Input \"password\" or \'AUTO\' for automatically generated input:" << endl;
@@ -27,7 +27,7 @@ cout << "Buffer Size = BUFSIZE" << endl;
 		cout << "Auto-generating..." << endl;
 		arg = string(BUFSIZE+1, 's');
 	}
-	cout << "User input: \"" << arg << "\"" << endl;
+	cout << "User input: \"" << arg << "\"\nInput.length: " << arg.length() << endl;
 	
 	char buffer[BUFSIZE];
 	strcpy(buffer, arg.c_str());
