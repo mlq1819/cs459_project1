@@ -22,8 +22,9 @@ int main(int argc, char** argv){
 	getline(cin, arg);
 	if(arg.compare("AUTO")==0){
 		cout << "Auto-generating..." << endl;
-		arg.assign(BUFSIZE+1, 's');
+		arg = string('s', BUFSIZE+1);
 	}
+	cout << "User input: " << arg << endl;
 	
 	char buffer[BUFSIZE];
 	strcpy(buffer, arg.c_str());
