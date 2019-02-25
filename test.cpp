@@ -19,15 +19,19 @@ int main(){
 		}
 		if(type.compare("quit")==0)
 			break;
-		cout << "Specify input or quit: " << endl;
-		cin >> input;
 		if(type.compare("hex")==0){
+			cout << "Specify input hex or quit: " << endl;
+			cin >> input;
 			cout << hex << input << endl;
 			cout << ((char) input) << endl;
 		} else {
+			cout << "Specify input char or quit: " << endl;
+			cin >> input;
 			cout << ((char) input) << endl;
 			cout << hex << input << endl;
 		}
+		type = "";
+		input=0;
 	}
 	return 0;
 }
