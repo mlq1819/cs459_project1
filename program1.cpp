@@ -7,7 +7,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#define BUFSIZE 256
+#define BUFSIZE 16
 
 using namespace std;
 
