@@ -24,7 +24,7 @@ int main(int argc, char** argv){
 		cout << "Auto-generating..." << endl;
 		arg = string('s', ((size_t) BUFSIZE)+1);
 	}
-	cout << "User input: " << arg << endl;
+	cout << "User input: \"" << arg << "\"" << endl;
 	
 	char buffer[BUFSIZE];
 	strcpy(buffer, arg.c_str());
