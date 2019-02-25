@@ -17,12 +17,16 @@ void secret(void){
 }
 
 int main(int argc, char** argv){
+#if DEBUG
+cout << "Buffer Size = BUFSIZE" << endl;
+#endif
 	string arg;
 	cout << "Input \"password\" or \'AUTO\' for automatically generated input:" << endl;
 	getline(cin, arg);
 	if(arg.compare("AUTO")==0){
 		cout << "Auto-generating..." << endl;
 		arg = string('s', ((size_t) BUFSIZE)+1);
+		cout << arg;
 	}
 	cout << "User input: \"" << arg << "\"" << endl;
 	
