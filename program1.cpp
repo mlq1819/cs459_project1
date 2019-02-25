@@ -25,8 +25,7 @@ cout << "Buffer Size = BUFSIZE" << endl;
 	getline(cin, arg);
 	if(arg.compare("AUTO")==0){
 		cout << "Auto-generating..." << endl;
-		arg = string('s', ((size_t) BUFSIZE)+1);
-		cout << arg;
+		arg = string(BUFSIZE+1, 's');
 	}
 	cout << "User input: \"" << arg << "\"" << endl;
 	
