@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <iostream>
 #include <string>
+#include <sstream>
 #define BUFSIZE 256
 
 using namespace std;
@@ -26,7 +27,7 @@ int main(int argc, char** argv){
 	for(int i=0; i<BUFSIZE; i++)
 		arg[i]='\0';
 	cout << "Input \"password\" or \'AUTO\' for automatically generated input:" << endl;
-	cin >> arg;
+	getline(cin, arg);
 	bool autogen = false;
 	if(strcmp(arg, "AUTO")==0){
 		autogen = true;
