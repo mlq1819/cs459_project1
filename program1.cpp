@@ -11,6 +11,12 @@
 
 using namespace std;
 
+void public_function(string arg){
+	char buffer[BUFSIZE];
+	memset(buffer, 'B', BUFSIZE);
+	strcpy(buffer, arg.c_str());
+}
+
 void secret(void){
 	cout << "SECRET TUNNEL" << endl;
 	exit(0);
@@ -29,7 +35,7 @@ cout << "BUFSIZE: " << BUFSIZE << endl;
 	}
 	cout << "User input: \"" << arg << "\"\nInput.length: " << arg.length() << endl;
 	
-	char buffer[BUFSIZE];
-	strcpy(buffer, arg.c_str());
+	public_function(arg);
+	
 	return 0;
 }
