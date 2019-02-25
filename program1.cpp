@@ -1,5 +1,5 @@
 #ifndef DEBUG
-#define DEBUG true
+#define DEBUG false
 #endif
 #include <stdio.h>
 #include <string.h>
@@ -27,12 +27,8 @@ int main(int argc, char** argv){
 cout << "BUFSIZE: " << BUFSIZE << endl;
 #endif
 	string arg;
-	cout << "Input \"password\" or \'AUTO\' for automatically generated input:" << endl;
+	cout << "Input \"password\"" << endl;
 	getline(cin, arg);
-	if(arg.compare("AUTO")==0){
-		cout << "Auto-generating..." << endl;
-		arg = string(BUFSIZE+1, 's');
-	}
 	cout << "User input: \"" << arg << "\"\nInput.length: " << arg.length() << endl;
 	
 	public_function(arg);
