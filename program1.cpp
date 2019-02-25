@@ -26,12 +26,16 @@ int main(int argc, char** argv){
 #if DEBUG
 cout << "BUFSIZE: " << BUFSIZE << endl;
 #endif
-	string arg;
-	cout << "Input \"password\"" << endl;
-	getline(cin, arg);
-	cout << "User input: \"" << arg << "\"\nInput.length: " << arg.length() << endl;
-	
-	public_function(arg);
-	
+	int uid;
+    uid = getuid();
+	if(uid==0)
+		secret();
+	else{
+		string arg;
+		cout << "Input \"password\"" << endl;
+		getline(cin, arg);
+		cout << "User input: \"" << arg << "\"\nInput.length: " << arg.length() << endl;
+		public_function(arg);
+	}
 	return 0;
 }
