@@ -16,32 +16,16 @@ void secret(void){
 	exit(0);
 }
 
-void generate(char * str, unsigned int len){
-	for(unsigned int i=0; i<len; i++){
-		str[i]='s';
-	}
-}
-
 int main(int argc, char** argv){
-	char * arg[BUFSIZE];
-	for(int i=0; i<BUFSIZE; i++)
-		arg[i]='\0';
+	string arg;
 	cout << "Input \"password\" or \'AUTO\' for automatically generated input:" << endl;
 	getline(cin, arg);
-	bool autogen = false;
-	if(strcmp(arg, "AUTO")==0){
-		autogen = true;
+	if(arg.compare("AUTO")==0){
 		cout << "Auto-generating..." << endl;
-		arg = (char *) malloc(sizeof(char) * (BUFSIZE + 1));
-		generate(arg, BUFSIZE+1);
+		args.assign(BUFSIZE+1, 's');
 	}
 	
 	char buffer[BUFSIZE];
-	strcpy(buffer, arg);
-	
-	if(autogen){
-		free(arg);
-		arg=NULL;
-	}
+	strcpy(buffer, arg.c_str());
 	return 0;
 }
