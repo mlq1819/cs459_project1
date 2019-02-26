@@ -38,7 +38,7 @@ string * getSolution(unsigned int addr){
 		char_arr[i] = *((char *) (&rbp + sizeof(char) * (i-filler)));
 	}
 	for(int i=filler+12; i<filler+14; i++){
-		char_arr[i] = '\000';
+		char_arr[i] = (char) 0;
 	}
 	for(int i=filler+14; i<filler+18; i++){
 		char_arr[i] = *((char *) (&addr + sizeof(char) * (i-filler-14)));

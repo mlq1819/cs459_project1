@@ -12,6 +12,9 @@ $(P).o: $(P).cpp
 run: $(P)
 	./$(P)
 	
+no_flags: $(P).cpp
+	g++ $(P).cpp -o $(P)
+	
 clear_run: $(P)
 	clear; clear; make run
 	
