@@ -24,10 +24,10 @@ void secret(void){
 
 string * getSolution(int addr){
 	string input;
-	cout << "Input filler length";
+	cout << "Input filler length:" << endl;
 	getline(cin, input);
 	int filler = stoi(input, NULL, 10);
-	cout << "Filler length = " << filler << "\nAddr = ";
+	cout << "Filler length = " << dec << filler << "\nAddr = ";
 	cout << hex << addr;
 	cout << endl;
 	char char_arr[filler+4];
@@ -62,7 +62,7 @@ cout << "BUFSIZE: " << BUFSIZE << endl;
 			arg = *getSolution(addr);
 			delarg=true;
 		}
-		cout << "User input: \"" << arg << "\"\nInput.length: " << arg.length() << endl;
+		cout << "User input: \"" << arg << "\"\nInput.length: " << dec << arg.length() << endl;
 		public_function(arg);
 		if(delarg){
 			delete &arg;
