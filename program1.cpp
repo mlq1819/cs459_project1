@@ -33,7 +33,7 @@ string * getSolution(unsigned int addr){
 		cout << "Do RBP? y/n" << endl;
 		getline(cin, input);
 		if(input.compare("y")==0)
-			break
+			break;
 		else if (input.compare("n")==0){
 			doRBP=false;
 			break;
