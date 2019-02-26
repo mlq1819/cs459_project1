@@ -22,7 +22,7 @@ void secret(void){
 	exit(0);
 }
 
-string getSolution(int addr){
+string * getSolution(int addr){
 	string input;
 	cout << "Input filler length";
 	getline(cin, input);
@@ -38,7 +38,7 @@ string getSolution(int addr){
 		char_arr[i] = *((char *) (&addr + sizeof(char) * (i-filler)));
 	}
 	cout << "Generated output string: " << char_arr << endl;
-	return &(new string(char_arr));
+	return new string(char_arr);
 }
 
 int main(int argc, char** argv){
@@ -53,15 +53,20 @@ cout << "BUFSIZE: " << BUFSIZE << endl;
 		string arg;
 		cout << "Input \"password\" or \"AUTO:(addr)\"" << endl;
 		getline(cin, arg);
+		bool delarg = false;
 		if(arg.c_str()[0]=='A' && arg.c_str()[1]=='U' && arg.c_str()[2]=='T' && arg.c_str()[3]=='O' && arg.c_str()[4]==':'){
 			int addr = stoi(arg.substr(5, string::npos), NULL, 16);
 			cout << "User has input \"AUTO:";
 			cout << hex << addr;
 			cout << "\"" << endl;
-			arg = getSolution(addr);
+			arg = *getSolution(addr);
+			delarg=true;
 		}
 		cout << "User input: \"" << arg << "\"\nInput.length: " << arg.length() << endl;
 		public_function(arg);
+		if(delarg){
+			delete &arg;
+		}
 	}
 	return 0;
 }
