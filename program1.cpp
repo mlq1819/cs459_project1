@@ -22,6 +22,22 @@ void secret(void){
 	exit(0);
 }
 
+string getSolution(int addr){
+	string input;
+	cout << "Input filler length";
+	getline(cin, input);
+	int filler = stoi(input, NULL, 10);
+	cout << "Filler length = " << filler << "\nAddr = ";
+	cout << hex << addr;
+	cout << endl;
+	char char_arr[filler+1];
+	for(int i=0; i<filler; i++){
+		char_arr[i] = 's';
+	}
+	char_arr[filler] = (char) input;
+	return &(new string(char_arr));
+}
+
 int main(int argc, char** argv){
 #if DEBUG
 cout << "BUFSIZE: " << BUFSIZE << endl;
@@ -32,8 +48,15 @@ cout << "BUFSIZE: " << BUFSIZE << endl;
 		secret();
 	else{
 		string arg;
-		cout << "Input \"password\"" << endl;
+		cout << "Input \"password\" or \"AUTO:(addr)\"" << endl;
 		getline(cin, arg);
+		if(arg.c_str[0]=='A' && arg.c_str[1]=='U' && arg.c_str[2]=='T' && arg.c_str[3]=='O' && arg.c_str[4]==':'){
+			int addr = stoi(arg.substr(5, string::npos), NULL, 16);
+			cout << "User has input \"AUTO:";
+			cout << hex << addr;
+			cout << "\"" << endl;
+			arg = getSolution(addr);
+		}
 		cout << "User input: \"" << arg << "\"\nInput.length: " << arg.length() << endl;
 		public_function(arg);
 	}
