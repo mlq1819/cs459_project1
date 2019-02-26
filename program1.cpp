@@ -24,7 +24,6 @@ void secret(void){
 
 string * getSolution(unsigned int addr){
 	string input;
-	int length = 0;
 	cout << "Input filler to rbp:" << endl;
 	getline(cin, input);
 	int filler = stoi(input, NULL, 10);
